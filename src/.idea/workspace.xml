@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0227d207-65a3-40dc-a754-fe66ca149ce2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XN2WBpc0saYH74RP75GlnZBO8d" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/稳态模型1" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\个人文档\科研\反向项目\第二期\src\稳态模型1" />
+      <recent name="D:\个人文档\科研\反向项目\第二期\src" />
+      <recent name="D:\个人文档\科研\反向项目\第二期\src\稳态模型\data" />
+      <recent name="D:\个人文档\科研\反向项目\第二期\src\稳态模型\data\train" />
+      <recent name="D:\个人文档\科研\反向项目\第二期\src\稳态模型\data\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\个人文档\科研\反向项目\第二期\src\动态模型\data\online" />
+      <recent name="D:\个人文档\科研\反向项目\第二期\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Model">
+    <configuration name="Interface" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="src" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Interface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="src" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot_train_result" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="src" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_train_result.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="src" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/稳态模型" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/稳态模型/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="src" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/动态模型" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态模型/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.test (2)" />
+      <item itemvalue="Python.Model" />
+      <item itemvalue="Python.Interface" />
+      <item itemvalue="Python.plot_train_result" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Model" />
+        <item itemvalue="Python.Interface" />
+        <item itemvalue="Python.plot_train_result" />
+        <item itemvalue="Python.test (2)" />
+        <item itemvalue="Python.test (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0227d207-65a3-40dc-a754-fe66ca149ce2" name="Default Changelist" comment="" />
+      <created>1574770030919</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574770030919</updated>
+      <workItem from="1574770036508" duration="24000" />
+      <workItem from="1580871880779" duration="187000" />
+      <workItem from="1580872269115" duration="1295000" />
+      <workItem from="1580873606601" duration="3697000" />
+      <workItem from="1580894522368" duration="2905000" />
+      <workItem from="1580907387600" duration="2178000" />
+      <workItem from="1581141813211" duration="2534000" />
+      <workItem from="1581303984319" duration="1054000" />
+      <workItem from="1581577394491" duration="2290000" />
+      <workItem from="1581598669094" duration="1291000" />
+      <workItem from="1587825770223" duration="436000" />
+      <workItem from="1587861789041" duration="3129000" />
+      <workItem from="1587879842025" duration="2571000" />
+      <workItem from="1587910013153" duration="4869000" />
+      <workItem from="1587982348341" duration="600000" />
+      <workItem from="1588211895493" duration="1197000" />
+      <workItem from="1588232505306" duration="36000" />
+      <workItem from="1588384628675" duration="10830000" />
+      <workItem from="1588398901581" duration="1815000" />
+      <workItem from="1588587824542" duration="3327000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="321" y="71" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580873560434">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="321" y="71" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.680@0.0.1280.680" timestamp="1580873560434" />
+    <state x="371" y="91" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588388908038">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="371" y="91" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1588388908038" />
+    <state width="1237" height="314" key="GridCell.Tab.0.bottom" timestamp="1588594225505">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="314" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588594225505" />
+    <state width="1237" height="314" key="GridCell.Tab.0.center" timestamp="1588594225505">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="314" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588594225505" />
+    <state width="1237" height="314" key="GridCell.Tab.0.left" timestamp="1588594225505">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="314" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588594225505" />
+    <state width="1237" height="314" key="GridCell.Tab.0.right" timestamp="1588594225505">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="314" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588594225505" />
+    <state width="1237" height="215" key="GridCell.Tab.1.bottom" timestamp="1588400718182">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="215" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588400718182" />
+    <state width="1237" height="215" key="GridCell.Tab.1.center" timestamp="1588400718181">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="215" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1588400718181" />
+    <state width="1237" height="215" key="GridCell.Tab.1.left" timestamp="1588400718181">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="215" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1588400718181" />
+    <state width="1237" height="215" key="GridCell.Tab.1.right" timestamp="1588400718181">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="215" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1588400718181" />
+    <state x="144" y="0" key="SettingsEditor" timestamp="1580894916808">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1580894916808" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/src$train.coverage" NAME="train Coverage Results" MODIFIED="1587913464850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态模型" />
+    <SUITE FILE_PATH="coverage/src$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1587914162139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/稳态模型" />
+    <SUITE FILE_PATH="coverage/src$plot_train_result.coverage" NAME="plot_train_result Coverage Results" MODIFIED="1588399259376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/src$Model.coverage" NAME="Model Coverage Results" MODIFIED="1588588924212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/src$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1587912553060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/稳态模型" />
+    <SUITE FILE_PATH="coverage/src$online.coverage" NAME="online Coverage Results" MODIFIED="1581304413453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态模型" />
+    <SUITE FILE_PATH="coverage/src$train__2_.coverage" NAME="train (2) Coverage Results" MODIFIED="1587911104173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/稳态模型1" />
+    <SUITE FILE_PATH="coverage/src$Interface.coverage" NAME="Interface Coverage Results" MODIFIED="1588588243690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/src$test.coverage" NAME="test Coverage Results" MODIFIED="1587911123785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/稳态模型1" />
+    <SUITE FILE_PATH="coverage/src$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1587914221885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态模型" />
+  </component>
+</project>

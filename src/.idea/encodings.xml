@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/log/test_LSTM.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/log/test_LSTM_10.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/log/test_LSTM_15.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/log/test_LSTM_20.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/log/test_LSTM_5.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/log/test_Net_5.txt" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>
