@@ -5,13 +5,13 @@ class Net(nn.Module):
         super(Net,self).__init__()
         self.input = nn.Sequential(
             nn.Linear(input_size, 16),
-            nn.ReLU()
+            nn.Sigmoid()
         )
         self.net = nn.Sequential(
             nn.Linear(16, 16),
-            nn.ReLU(),
+            nn.Sigmoid(),
             nn.Linear(16, 16),
-            nn.ReLU()
+            nn.Sigmoid()
         )
         self.out = nn.Sequential(
             nn.Linear(16,output_size)

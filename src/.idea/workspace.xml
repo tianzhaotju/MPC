@@ -199,6 +199,7 @@
       <workItem from="1588384628675" duration="10830000" />
       <workItem from="1588398901581" duration="1815000" />
       <workItem from="1588587824542" duration="3327000" />
+      <workItem from="1589010314470" duration="4873000" />
     </task>
     <servers />
   </component>
@@ -214,22 +215,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="91" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1588388908038" />
-    <state width="1237" height="314" key="GridCell.Tab.0.bottom" timestamp="1588594225505">
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1589016708819">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="314" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588594225505" />
-    <state width="1237" height="314" key="GridCell.Tab.0.center" timestamp="1588594225505">
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1589016708819" />
+    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1589016708819">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="314" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588594225505" />
-    <state width="1237" height="314" key="GridCell.Tab.0.left" timestamp="1588594225505">
+    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1589016708819" />
+    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1589016708819">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="314" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588594225505" />
-    <state width="1237" height="314" key="GridCell.Tab.0.right" timestamp="1588594225505">
+    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1589016708819" />
+    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1589016708819">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="314" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588594225505" />
+    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1589016708819" />
     <state width="1237" height="215" key="GridCell.Tab.1.bottom" timestamp="1588400718182">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -255,7 +256,7 @@
     <SUITE FILE_PATH="coverage/src$train.coverage" NAME="train Coverage Results" MODIFIED="1587913464850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态模型" />
     <SUITE FILE_PATH="coverage/src$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1587914162139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/稳态模型" />
     <SUITE FILE_PATH="coverage/src$plot_train_result.coverage" NAME="plot_train_result Coverage Results" MODIFIED="1588399259376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/src$Model.coverage" NAME="Model Coverage Results" MODIFIED="1588588924212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/src$Model.coverage" NAME="Model Coverage Results" MODIFIED="1589014936675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/src$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1587912553060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/稳态模型" />
     <SUITE FILE_PATH="coverage/src$online.coverage" NAME="online Coverage Results" MODIFIED="1581304413453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态模型" />
     <SUITE FILE_PATH="coverage/src$train__2_.coverage" NAME="train (2) Coverage Results" MODIFIED="1587911104173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/稳态模型1" />

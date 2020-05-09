@@ -10,7 +10,7 @@ from LSTM import LSTM
 
 
 class Model():
-    def __init__(self, stride =5, input_size=2, output_size=4,learning_rate=0.00001,EPOCH = 1000):
+    def __init__(self, stride =5, input_size=6, output_size=4,learning_rate=0.00001,EPOCH = 1000):
         self.stride = stride
         self.input_size = input_size
         self.output_size = output_size
@@ -61,17 +61,17 @@ class Model():
         if normalized:
             data_x,data_y = self.normalizedData(data_x,data_y)
 
-        train_data_len = int(percent*len(data_x))
+        test_data_len = int((1-percent)*len(data_x))
         # np.random.seed(0)
         # state = np.random.get_state()
         # np.random.shuffle(data_x)
         # np.random.set_state(state)
         # np.random.shuffle(data_y)
 
-        train_data_x = data_x[:train_data_len]
-        train_data_y = data_y[:train_data_len]
-        test_data_x = data_x[train_data_len:]
-        test_data_y = data_y[train_data_len:]
+        train_data_x = data_x[test_data_len:]
+        train_data_y = data_y[test_data_len:]
+        test_data_x = data_x[:test_data_len]
+        test_data_y = data_y[:test_data_len]
 
 
         train_data_x_ = []
@@ -79,16 +79,22 @@ class Model():
         test_data_x_ = []
         test_data_y_ = []
 
-        for i in range(len(train_data_x)-self.stride+1):
-            temp = np.reshape(train_data_x[i:i+self.stride,0:],[self.stride*self.input_size])
+        for i in range(len(train_data_x)-self.stride):
+            temp_input = np.array(train_data_x[i:i+self.stride,0:])
+            temp_output = np.array(train_data_y[i:i + self.stride, 0:])
+            temp = np.concatenate((temp_input,temp_output),axis=1)
+            temp = temp.flatten()
             train_data_x_.append(temp)
-            temp = train_data_y[i+self.stride-1]
+            temp = train_data_y[i+self.stride]
             train_data_y_.append(temp)
 
-        for i in range(len(test_data_x)-self.stride+1):
-            temp = np.reshape(test_data_x[i:i+self.stride,0:],[self.stride*self.input_size])
+        for i in range(len(test_data_x)-self.stride):
+            temp_input = np.array(train_data_x[i:i + self.stride, 0:])
+            temp_output = np.array(train_data_y[i:i + self.stride, 0:])
+            temp = np.concatenate((temp_input, temp_output), axis=1)
+            temp = temp.flatten()
             test_data_x_.append(temp)
-            temp = test_data_y[i+self.stride-1]
+            temp = test_data_y[i+self.stride]
             test_data_y_.append(temp)
 
         train_data_x_ = np.array(train_data_x_)
@@ -403,7 +409,7 @@ class Model():
 
 
 if __name__ == '__main__':
-    for i in [10,15,20]:
+    for i in [5,10,15,20]:
         model = Model(stride=i,EPOCH=1000)
         model.train_Net(normalized=True)
         model.test_Net(normalized=True)

@@ -5,7 +5,7 @@ class LSTM(nn.Module):
         super(LSTM,self).__init__()
         self.input = nn.Sequential(
             nn.Linear(input_size, 16),
-            nn.ReLU()
+            nn.Sigmoid()
         )
         self.lstm = nn.LSTM(
             input_size=16,
