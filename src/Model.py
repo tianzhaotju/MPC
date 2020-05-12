@@ -561,12 +561,13 @@ class Model():
 
 
 if __name__ == '__main__':
-    for i in [5,10,15,20,25,30]:
+    # for i in [5,10,15,20,25,30,35,40]:
+    for i in [45,50]:
         model = Model(stride=i,EPOCH=1000)
-        # model.train_Net(normalized=True)
+        model.train_Net(normalized=True)
         model.test_Net(normalized=True)
 
-        # model.train_LSTM(normalized=True)
+        model.train_LSTM(normalized=True)
         model.test_LSTM(normalized=True)
     # model = Model(stride=10, EPOCH=1000)
     # model.test_future_LSTM(normalized=True,future=10)
