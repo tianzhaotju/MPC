@@ -1,7 +1,8 @@
 from Model import Model
 import numpy as np
 
-# 创建 Model
+# 创建 Model， stride就是代表历史长度，通过更改model.stride就可以实现对模型的选择
+# 例如: model.stride = n（n的取值范围5,10,15,20,25,30,35,40,45,50）
 model = Model(stride=20)
 
 #全连接神经网络 模型预测

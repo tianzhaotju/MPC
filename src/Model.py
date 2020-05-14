@@ -395,6 +395,8 @@ class Model():
         return data_y
 
     def predict_Net(self, data_x, normalized=True,de_normalized=True):
+        print(self.stride)
+        exit()
         # print("-------------------------------------------")
         if normalized:
             data_x = self.normalizedDataX(data_x)
@@ -420,7 +422,7 @@ class Model():
         return data_y
 
     def test_future_LSTM(self, data_files_dic="./data/", normalized=False, percent=0.9, future=10):
-        f = open("./log/test_future_LSTM_" + str(future) + ".txt", "w")
+        f = open("./log/test_future_LSTM_s" + str(self.stride)+'_f'+str(future) + ".txt", "w")
         print("-------------------------------------------")
         f.write("\n" + "-------------------------------------------")
         print("Future test LSTM Model...")
@@ -470,7 +472,7 @@ class Model():
             loss_ = np.abs(predict_y - ty) / ty
             for i in range(len(loss_)):
                 loss[i] = loss[i] + loss_[i]
-            print(predict_y, ty)
+            # print(predict_y, ty)
             f.write("\n" + str(predict_y) + " " + str(ty))
         time2 = time.time()
         loss /= (len(test_data_x)-self.stride-future+1)
@@ -488,9 +490,12 @@ class Model():
         f.write("\n" + "CO误差率: " + str(float(loss[3] * 100))[:8] + "%")
         print("平均耗时：", (time2 - time1) / (len(test_data_x)-self.stride-future+1))
         f.write("\n" + "平均耗时：" + str((time2 - time1) / (len(test_data_x)-self.stride-future+1)))
+        return [str(float(loss[0] * 100))[:8] + "%", str(float(loss[1] * 100))[:8] + "%",
+                str(float(loss[2] * 100))[:8] + "%", str(float(loss[3] * 100))[:8] + "%",
+                str((time2 - time1) / (len(test_data_x) - self.stride - future + 1))]
 
     def test_future_Net(self, data_files_dic="./data/", normalized=False, percent=0.9, future=10):
-        f = open("./log/test_future_Net_" + str(future) + ".txt", "w")
+        f = open("./log/test_future_Net_s" + str(self.stride)+'_f'+str(future) + ".txt", "w")
         print("-------------------------------------------")
         f.write("\n" + "-------------------------------------------")
         print("Future test Net Model...")
@@ -535,12 +540,12 @@ class Model():
                     tx_y = np.append(tx_y, predict_y, axis=0)
                 tx = np.concatenate((tx_x,tx_y),axis=1)
                 ty = np.array(test_data_y[j])
-                predict_y = self.predict_LSTM(tx, normalized=False,de_normalized=False)
+                predict_y = self.predict_Net(tx, normalized=False,de_normalized=False)
             predict_y = predict_y[0]
             loss_ = np.abs(predict_y - ty) / ty
             for i in range(len(loss_)):
                 loss[i] = loss[i] + loss_[i]
-            print(predict_y, ty)
+            # print(predict_y, ty)
             f.write("\n" + str(predict_y) + " " + str(ty))
         time2 = time.time()
         loss /= (len(test_data_x)-self.stride-future+1)
@@ -558,17 +563,23 @@ class Model():
         f.write("\n" + "CO误差率: " + str(float(loss[3] * 100))[:8] + "%")
         print("平均耗时：", (time2 - time1) / (len(test_data_x)-self.stride-future+1))
         f.write("\n" + "平均耗时：" + str((time2 - time1) / (len(test_data_x)-self.stride-future+1)))
-
+        return [str(float(loss[0] * 100))[:8] + "%",str(float(loss[1] * 100))[:8] + "%",str(float(loss[2] * 100))[:8] + "%",str(float(loss[3] * 100))[:8] + "%",str((time2 - time1) / (len(test_data_x)-self.stride-future+1))]
 
 if __name__ == '__main__':
-    # for i in [5,10,15,20,25,30,35,40]:
-    for i in [45,50]:
-        model = Model(stride=i,EPOCH=1000)
-        model.train_Net(normalized=True)
-        model.test_Net(normalized=True)
+    # 训练 & 测试
+    # for i in [5,10,15,20,25,30,35,40,45,50]:
+    #     model = Model(stride=i,EPOCH=1000)
+    #     model.train_Net(normalized=True)
+    #     model.test_Net(normalized=True)
+    #
+    #     model.train_LSTM(normalized=True)
+    #     model.test_LSTM(normalized=True)
 
-        model.train_LSTM(normalized=True)
-        model.test_LSTM(normalized=True)
-    # model = Model(stride=10, EPOCH=1000)
-    # model.test_future_LSTM(normalized=True,future=10)
-    # model.test_future_Net(normalized=True,future=10)
+    # 测试未来一段时间
+    A = []
+    B = []
+    for j in [10, 20, 30, 40, 50, 60]:
+        for i in [5,10,15,20,25,30,35,40,45,50]:
+            model = Model(stride=i, EPOCH=1000)
+            # a = model.test_future_LSTM(normalized=True,future=j)
+            b = model.test_future_Net(normalized=True,future=j)
