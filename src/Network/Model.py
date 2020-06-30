@@ -105,6 +105,32 @@ class Model():
 
         return train_data_x_,train_data_y_,test_data_x_,test_data_y_
 
+    def getOnlineData(self,data_files_dic,normalized):
+        data_x = []
+        data_y = []
+        data_x,data_y = self.readFile(data_files_dic,data_x,data_y)
+        data_x = np.array(data_x)[:,1:]
+        data_y = np.array(data_y)
+        if normalized:
+            data_x,data_y = self.normalizedData(data_x,data_y)
+
+        data_x_ = []
+        data_y_ = []
+
+        for i in range(len(data_x)-self.stride):
+            temp_input = np.array(data_x[i:i+self.stride,0:])
+            temp_output = np.array(data_y[i:i + self.stride, 0:])
+            temp = np.concatenate((temp_input,temp_output),axis=1)
+            temp = temp.flatten()
+            data_x_.append(temp)
+            temp = data_y[i+self.stride]
+            data_y_.append(temp)
+
+        data_x_ = np.array(data_x_)
+        data_y_ = np.array(data_y_)
+
+        return data_x_, data_y_
+
     #Normalized data
     def normalizedData(self,data_x,data_y):
         for i in range(data_x.shape[1]):
@@ -395,8 +421,6 @@ class Model():
         return data_y
 
     def predict_Net(self, data_x, normalized=True,de_normalized=True):
-        print(self.stride)
-        exit()
         # print("-------------------------------------------")
         if normalized:
             data_x = self.normalizedDataX(data_x)
@@ -564,6 +588,185 @@ class Model():
         print("平均耗时：", (time2 - time1) / (len(test_data_x)-self.stride-future+1))
         f.write("\n" + "平均耗时：" + str((time2 - time1) / (len(test_data_x)-self.stride-future+1)))
         return [str(float(loss[0] * 100))[:8] + "%",str(float(loss[1] * 100))[:8] + "%",str(float(loss[2] * 100))[:8] + "%",str(float(loss[3] * 100))[:8] + "%",str((time2 - time1) / (len(test_data_x)-self.stride-future+1))]
+
+    def online_train_LSTM(self,train_path, model_path, stride, EPOCH):
+        print("-------------------------------------------")
+        print("Online Train LSTM Model...")
+        self.stride = stride
+        self.EPOCH = EPOCH
+        # Get train data and test data
+        train_data_x, train_data_y = self.getOnlineData(data_files_dic=train_path,
+                                                        normalized=True)
+
+        # Print the size of train data and test data
+        print("Train data shape:")
+        print(train_data_x.shape)
+        print(train_data_y.shape)
+
+        train_data_x = torch.Tensor(train_data_x)
+        train_data_y = torch.Tensor(train_data_y)
+
+        trainset = DataSet(train_data_x, train_data_y)
+        trainloader = DataLoader(trainset, batch_size=16, shuffle=False)
+
+        # Load the Net LSTM_model
+        # net = torch.load('LSTM_model.pth')
+
+        # Bulid the LSTM_model
+        net = LSTM(self.input_size*self.stride, self.output_size)
+        # Optimize all net parameters
+        optimizer = torch.optim.Adam(net.parameters(), lr=self.learning_rate)
+        # The loss function uses mean square error (MSE) loss function
+        loss_func = nn.MSELoss()
+
+        for step in range(self.EPOCH):
+            total_loss = 0
+            for tx, ty in trainloader:
+                output = net.forward(torch.unsqueeze(tx, dim=0))
+                # print(output.detach().numpy()[0][0],ty.numpy()[0])
+                loss = loss_func(torch.squeeze(output), ty)
+                # clear gradients for this training step
+                optimizer.zero_grad()
+                # back propagation, compute gradients
+                loss.backward()
+                optimizer.step()
+                total_loss += float(loss)
+            # print(step, float(total_loss))
+        torch.save(net, model_path+"/LSTM_model_"+str(self.stride)+".pth")
+        print("Save Online LSTM Model")
+
+    def online_train_Net(self, train_path, model_path, stride, EPOCH):
+        print("-------------------------------------------")
+        print("Online Train Net Model...")
+        self.stride = stride
+        self.EPOCH = EPOCH
+        # Get train data and test data
+        train_data_x, train_data_y = self.getOnlineData(data_files_dic=train_path,
+                                                        normalized=True)
+
+        # Print the size of train data and test data
+        print("Train data shape:")
+        print(train_data_x.shape)
+        print(train_data_y.shape)
+
+        train_data_x = torch.Tensor(train_data_x)
+        train_data_y = torch.Tensor(train_data_y)
+
+        trainset = DataSet(train_data_x, train_data_y)
+        trainloader = DataLoader(trainset, batch_size=16, shuffle=False)
+
+        # Bulid the Net_model
+        net = Net(self.input_size * self.stride, self.output_size)
+        # Optimize all net parameters
+        optimizer = torch.optim.Adam(net.parameters(), lr=self.learning_rate)
+        # The loss function uses mean square error (MSE) loss function
+        loss_func = nn.MSELoss()
+
+        for step in range(self.EPOCH):
+            total_loss = 0
+            for tx, ty in trainloader:
+                output = net.forward(torch.unsqueeze(tx, dim=0))
+                # print(output.detach().numpy()[0][0],ty.numpy()[0])
+                loss = loss_func(torch.squeeze(output), ty)
+                # clear gradients for this training step
+                optimizer.zero_grad()
+                # back propagation, compute gradients
+                loss.backward()
+                optimizer.step()
+                total_loss += float(loss)
+            # print(step, float(total_loss))
+        torch.save(net, model_path + "/Net_model_" + str(self.stride) + ".pth")
+        print("Save Online Net Model")
+
+    def online_test_Net(self,test_path, model_path, stride):
+        print("-------------------------------------------")
+        print("Test Net Model...")
+
+        self.stride = stride
+
+        # Get train data and test data
+        test_data_x, test_data_y = self.getOnlineData(data_files_dic=test_path, normalized=True)
+
+        # Print the size of train data and test data
+        print("Test data shape:")
+        print(test_data_x.shape)
+        print(test_data_y.shape)
+
+        test_data_x = torch.Tensor(test_data_x)
+        test_data_y = torch.Tensor(test_data_y)
+
+        testset = DataSet(test_data_x, test_data_y)
+        testloader = DataLoader(testset, batch_size=1, shuffle=False)
+
+        # Load the Net_model
+        net = torch.load(model_path+"/Net_model_"+str(self.stride)+".pth")
+
+        loss = np.array([0, 0, 0, 0], float)
+        time1 = time.time()
+        for tx, ty in testloader:
+            output = net(torch.unsqueeze(tx, dim=0))
+            output = torch.reshape(output, [output.shape[1], output.shape[2]])
+            loss_ = torch.abs(output - ty) / ty
+            loss_ = loss_.detach().numpy()[0]
+            for i in range(len(loss_)):
+                loss[i] = loss[i] + loss_[i]
+            # print(output.detach().numpy(), ty.numpy())
+
+        time2 = time.time()
+        loss /= len(testloader)
+        print("Net Model Test:")
+        print("---------------------------------------------------")
+        print("气化温度误差率: " + str(float(loss[0] * 100))[:8] + "%")
+        print("H2误差率: " + str(float(loss[1] * 100))[:8] + "%")
+        print("CH4误差率: " + str(float(loss[2] * 100))[:8] + "%")
+        print("CO误差率: " + str(float(loss[3] * 100))[:8] + "%")
+        print("平均耗时：", (time2 - time1) / len(testloader))
+        return [float(loss[0] * 100), float(loss[1] * 100), float(loss[2] * 100), float(loss[3] * 100), (time2 - time1) / len(testloader)]
+
+    def online_test_LSTM(self,test_path, model_path, stride):
+        print("-------------------------------------------")
+        print("Test LSTM Model...")
+
+        self.stride = stride
+
+        # Get train data and test data
+        test_data_x, test_data_y = self.getOnlineData(data_files_dic=test_path, normalized=True)
+
+        # Print the size of train data and test data
+        print("Test data shape:")
+        print(test_data_x.shape)
+        print(test_data_y.shape)
+
+        test_data_x = torch.Tensor(test_data_x)
+        test_data_y = torch.Tensor(test_data_y)
+
+        testset = DataSet(test_data_x, test_data_y)
+        testloader = DataLoader(testset, batch_size=1, shuffle=False)
+
+        # Load the Net_model
+        net = torch.load(model_path+"/LSTM_model_"+str(self.stride)+".pth")
+
+        loss = np.array([0, 0, 0, 0], float)
+        time1 = time.time()
+        for tx, ty in testloader:
+            output = net(torch.unsqueeze(tx, dim=0))
+            output = torch.reshape(output, [output.shape[1], output.shape[2]])
+            loss_ = torch.abs(output - ty) / ty
+            loss_ = loss_.detach().numpy()[0]
+            for i in range(len(loss_)):
+                loss[i] = loss[i] + loss_[i]
+            # print(output.detach().numpy(), ty.numpy())
+
+        time2 = time.time()
+        loss /= len(testloader)
+        print("LSTM Model Test:")
+        print("---------------------------------------------------")
+        print("气化温度误差率: " + str(float(loss[0] * 100))[:8] + "%")
+        print("H2误差率: " + str(float(loss[1] * 100))[:8] + "%")
+        print("CH4误差率: " + str(float(loss[2] * 100))[:8] + "%")
+        print("CO误差率: " + str(float(loss[3] * 100))[:8] + "%")
+        print("平均耗时：", (time2 - time1) / len(testloader))
+        return [float(loss[0] * 100), float(loss[1] * 100), float(loss[2] * 100), float(loss[3] * 100), (time2 - time1) / len(testloader)]
 
 if __name__ == '__main__':
     # 训练 & 测试

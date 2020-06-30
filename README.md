@@ -1,3 +1,4 @@
 # MPC
 
-MPC预测模块
+#### 介绍
+见src/readme.txt
